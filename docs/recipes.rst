@@ -182,14 +182,14 @@ is easier and more intuitive. Below are some common examples of how to use the n
 
 .. code:: python3
 
-    import discord
+    import disnake
     import wavelink
 
-    from discord.ext import commands
+    from disnake.ext import commands
 
 
     @commands.command()
-    async def connect(self, ctx: commands.Context, *, channel: discord.VoiceChannel = None):
+    async def connect(self, ctx: commands.Context, *, channel: disnake.VoiceChannel = None):
         try:
             channel = channel or ctx.author.channel.voice
         except AttributeError:
@@ -207,21 +207,21 @@ is easier and more intuitive. Below are some common examples of how to use the n
 
 .. code:: python3
 
-    import discord
+    import disnake
     import wavelink
 
-    from discord.ext import commands
+    from disnake.ext import commands
 
 
     class Player(wavelink.Player):
         """A Player with a DJ attribute."""
 
-        def __init__(self, dj: discord.Member):
+        def __init__(self, dj: disnake.Member):
             self.dj = dj
 
 
     @commands.command()
-    async def connect(self, ctx: commands.Context, *, channel: discord.VoiceChannel = None):
+    async def connect(self, ctx: commands.Context, *, channel: disnake.VoiceChannel = None):
         try:
             channel = channel or ctx.author.channel.voice
         except AttributeError:
